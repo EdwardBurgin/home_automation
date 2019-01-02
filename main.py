@@ -1,5 +1,6 @@
 #import the required modules
 import RPi.GPIO as GPIO
+
 import time
 # set the pins numbering mode
 GPIO.setmode(GPIO.BOARD)
@@ -103,4 +104,4 @@ try:
 		GPIO.output (22, False)
 # Clean up the GPIOs for next time
 except KeyboardInterrupt:
-GPIO.cleanup()
+	GPIO.cleanup()
