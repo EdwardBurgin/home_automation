@@ -14,7 +14,10 @@ https://www.waveshare.com/wiki/Raspberry_Pi_Tutorial_Series:_1-Wire_DS18B20_Sens
 
 Changing the w1 dir so that a shield doesn't need to be modified:
 https://pinout.xyz/pinout/1_wire
-sudo dtoverlay w1-gpio gpiopin=4 pullup=0  # header pin 7
+
+
+Add to the start of the raspberry pi initiation sequence:
+sudo dtoverlay w1-gpio gpiopin=6 pullup=0  # header pin 7
 
 
 Original temp sensor datasheet: https://learn.adafruit.com/adafruits-raspberry-pi-lesson-11-ds18b20-temperature-sensing/hardware
