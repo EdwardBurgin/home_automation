@@ -30,7 +30,7 @@ f.close()
 
 #import the required modules
 import RPi.GPIO as GPIO
-
+GPIO.setwarnings(False)
 import time
 # set the pins numbering mode
 GPIO.setmode(GPIO.BOARD)
@@ -92,7 +92,7 @@ def read_temp():
         temp_string = lines[1].strip()[temp_output+2:]
         temp_c = float(temp_string)/1000.0
         return temp_c
-
+print 'entering loop'
 while True:
     curr = read_temp()
     f = open("temp.txt","a+")
