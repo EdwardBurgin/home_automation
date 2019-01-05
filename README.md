@@ -17,7 +17,7 @@ https://pinout.xyz/pinout/1_wire
 
 
 Add to the start of the raspberry pi initiation sequence:
-sudo dtoverlay w1-gpio gpiopin=6 pullup=0  # header pin 7
+'<sudo dtoverlay w1-gpio gpiopin=6 pullup=0  # header pin 7>'
 
 
 Original temp sensor datasheet: https://learn.adafruit.com/adafruits-raspberry-pi-lesson-11-ds18b20-temperature-sensing/hardware
@@ -32,5 +32,24 @@ https://opinionatedgeek.com/Snaplets/Blog/Form/Item/000751/Read
 
 
 Pi pinout: https://www.google.com/search?q=raspberry+pi+2+pinout&safe=off&rlz=1C5CHFA_enIE732IE732&tbm=isch&source=iu&ictx=1&fir=oL4JD9fUyFm3PM%253A%252C1s2C61VHqmyqDM%252C_&usg=AI4_-kScykd95Dp9XLPMzpHLEyCahoflxA&sa=X&ved=2ahUKEwj1ocvWy8_fAhVL-6QKHe8QB8YQ9QEwAHoECAUQBA#imgrc=NtnLn40CvsfPgM:
+
+#Developing on the Raspberry pi
+I love jupyter notebook, especially for rapid prototyping (hardware or software). To get this going follow this [blog](https://www.instructables.com/id/Jupyter-Notebook-on-Raspberry-Pi/) to setup jupyter. There is also something called Berryconda (this didn't work for me out of the box so saved for a later date).
+
+'''bash
+sudo su -
+apt-get update
+apt-get install python3-matplotlib
+apt-get install python3-scipy
+pip3 install --upgrade pip
+reboot
+sudo pip3 install jupyter
+'''
+
+Then on the pi start a server like this:
+On pi: nohup jupyter notebook --no-browser --port=8889
+Use htop to ensure running. don't close terminal as will kill kernal. Use tmux to give many panels in terminal. 
+On LOCAL: ssh -N -f -L localhost:8890:localhost:8889 pi@192.168.1.xxx
+
 
 
