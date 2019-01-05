@@ -54,9 +54,9 @@ sudo pip3 install jupyter
 ```
 
 Then on the pi start a server like this:
-On pi: nohup jupyter notebook --no-browser --port=8889
-Use htop to ensure running. don't close terminal as will kill kernal. Use tmux to give many panels in terminal. 
-On LOCAL: ssh -N -f -L localhost:8890:localhost:8889 pi@192.168.1.xxx
+- On pi: nohup jupyter notebook --no-browser --port=8889
+- Use htop to ensure running. don't close terminal as will kill kernal. (Recommend to use Tmux to give many panels in terminal)
+- On LOCAL: ssh -N -f -L localhost:8890:localhost:8889 pi@192.168.1.xxx
 
 
 
