@@ -29,11 +29,11 @@ Original temp sensor datasheet: https://learn.adafruit.com/adafruits-raspberry-p
 
 ## Energenie pi-mote shield: 
 
-https://energenie4u.co.uk/res/pdfs/ENER314%20UM.pdf
-https://www.raspberrypi.org/blog/controlling-electrical-sockets-with-energenie-pi-mote/
-https://github.com/Energenie/pyenergenie
-https://github.com/whaleygeek/pyenergenie
-https://opinionatedgeek.com/Snaplets/Blog/Form/Item/000751/Read
+- https://energenie4u.co.uk/res/pdfs/ENER314%20UM.pdf
+- https://www.raspberrypi.org/blog/controlling-electrical-sockets-with-energenie-pi-mote/
+- https://github.com/Energenie/pyenergenie
+- https://github.com/whaleygeek/pyenergenie
+- https://opinionatedgeek.com/Snaplets/Blog/Form/Item/000751/Read
 
 ## Pi pinout:
 
