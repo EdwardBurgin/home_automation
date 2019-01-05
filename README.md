@@ -1,4 +1,4 @@
-#home_automation
+#home_automation\n
 
 Use 3.3v GPIO output from BCM 21 of rpi (top right header opposite 5v). Using a 4.7kv resistor, so not parasite mode. https://raspberrypi.stackexchange.com/questions/78134/how-to-use-ds18b20-in-parasite-power-mode/78175 {"""The DS18B20 needs at max 1.5mA for a conversion. Simultaneous conversions on several DS18B20 aren't allowed in parasite powered mode, so that's the maximum current you have to provide.
 
@@ -33,7 +33,7 @@ https://opinionatedgeek.com/Snaplets/Blog/Form/Item/000751/Read
 
 Pi pinout: https://www.google.com/search?q=raspberry+pi+2+pinout&safe=off&rlz=1C5CHFA_enIE732IE732&tbm=isch&source=iu&ictx=1&fir=oL4JD9fUyFm3PM%253A%252C1s2C61VHqmyqDM%252C_&usg=AI4_-kScykd95Dp9XLPMzpHLEyCahoflxA&sa=X&ved=2ahUKEwj1ocvWy8_fAhVL-6QKHe8QB8YQ9QEwAHoECAUQBA#imgrc=NtnLn40CvsfPgM:
 
-#Developing on the Raspberry pi
+#Developing on the Raspberry pi\n
 
 I love jupyter notebook, especially for rapid prototyping (hardware or software). To get this going follow this [blog](https://www.instructables.com/id/Jupyter-Notebook-on-Raspberry-Pi/) to setup jupyter. There is also something called Berryconda (this didn't work for me out of the box so saved for a later date).
 
@@ -47,9 +47,9 @@ reboot
 sudo pip3 install jupyter
 ```
 
-Then on the pi start a server like this:
-On pi: nohup jupyter notebook --no-browser --port=8889
-Use htop to ensure running. don't close terminal as will kill kernal. Use tmux to give many panels in terminal. 
+Then on the pi start a server like this:\n
+On pi: nohup jupyter notebook --no-browser --port=8889\n
+Use htop to ensure running. don't close terminal as will kill kernal. Use tmux to give many panels in terminal. \n
 On LOCAL: ssh -N -f -L localhost:8890:localhost:8889 pi@192.168.1.xxx
 
 
