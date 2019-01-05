@@ -37,8 +37,6 @@ https://opinionatedgeek.com/Snaplets/Blog/Form/Item/000751/Read
 
 ## Pi pinout:
 
- ![pinout](https://www.google.com/search?q=raspberry+pi+2+pinout&safe=off&rlz=1C5CHFA_enIE732IE732&tbm=isch&source=iu&ictx=1&fir=oL4JD9fUyFm3PM%253A%252C1s2C61VHqmyqDM%252C_&usg=AI4_-kScykd95Dp9XLPMzpHLEyCahoflxA&sa=X&ved=2ahUKEwj1ocvWy8_fAhVL-6QKHe8QB8YQ9QEwAHoECAUQBA#imgrc=NtnLn40CvsfPgM)
-
 ![pinout2](https://github.com/EdwardBurgin/EdwardBurgin.github.io/blob/master/images/assorted/gpio_layout-raspberry-pi2.jpg)
 
 # Developing on the Raspberry pi
