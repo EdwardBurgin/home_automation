@@ -1,6 +1,13 @@
 
 # Home Automation
 
+## Results
+
+Both heating activation time range and temperature zoning work as expected as seen in the image below:
+
+![Graph1](https://github.com/EdwardBurgin/EdwardBurgin.github.io/blob/master/images/assorted/Screen Shot 2019-01-06 at 13.10.14.png )
+
+
 ### One Wire Temperature sensor
 
 Use 3.3v GPIO output from BCM 21 of rpi (top right header opposite 5v). Using a 4.7kv resistor, so not parasite mode. https://raspberrypi.stackexchange.com/questions/78134/how-to-use-ds18b20-in-parasite-power-mode/78175 
@@ -58,5 +65,9 @@ Then on the pi start a server like this:
 - Use htop to ensure running. don't close terminal as will kill kernal. (Recommend to use Tmux to give many panels in terminal)
 - On LOCAL: ssh -N -f -L localhost:8890:localhost:8889 pi@192.168.1.xxx
 
+## Python package management
+Couple of options here (conda in the second link may be best): 
+- https://github.com/googlesamples/assistant-sdk-python/issues/236
+- https://gist.github.com/RobbieClarken/416d67ff6a0ffd631acd
 
 
