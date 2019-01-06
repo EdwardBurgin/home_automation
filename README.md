@@ -4,6 +4,8 @@
 I have had a bunch of RPi units sitting around doing nothing, dumb RF smart plugs using a frequently lost clicker and a new echo devices. A first port of call was thermal regulation for my inadequately insulated rented accomodation. Then I want everything connected to and controlled by the Alexa.
 Documenting to help others and remind/organise for myself for later.
 
+![Setup](https://photos.app.goo.gl/LyMKLG1xJxo91UVD6)
+
 ## Results
 
 Both heating activation time range and temperature zoning work as expected as seen in the image below:
