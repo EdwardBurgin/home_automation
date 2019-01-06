@@ -1,11 +1,14 @@
 
 # Home Automation
 
+I have had a bunch of RPi units sitting around doing nothing, dumb RF smart plugs using a frequently lost clicker and a new echo devices. A first port of call was thermal regulation for my inadequately insulated rented accomodation. Then I want everything connected to and controlled by the Alexa.
+Documenting to help others and remind/organise for myself for later.
+
 ## Results
 
 Both heating activation time range and temperature zoning work as expected as seen in the image below:
 
-![Graph1](https://github.com/EdwardBurgin/EdwardBurgin.github.io/blob/master/images/assorted/Screen Shot 2019-01-06 at 13.10.14.png )
+![Graph1](https://github.com/EdwardBurgin/EdwardBurgin.github.io/blob/master/images/assorted/Screen%20Shot%202019-01-06%20at%2013.10.14.png )
 
 
 ### One Wire Temperature sensor
