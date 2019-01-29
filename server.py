@@ -3,10 +3,9 @@ from flask import Flask
 import datetime
 from util import *
 
-
 def str_format():
     t = datetime.datetime.now().time()
-    return "The time is %d:%d and the temperature is...  %d degrees"%(t.hour, t.minute, read_temp())
+    return "The time is %d:%d and the temperature is...  %.3f degrees"%(t.hour, t.minute, read_temp())
 
 def web_page(im_tag):
     page = """
