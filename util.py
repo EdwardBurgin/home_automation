@@ -2,8 +2,6 @@ import RPi.GPIO as GPIO
 import time
 import os
 
-
-
 temp_loc = '/sys/bus/w1/devices/'
 device = '28-0213924576ef/'
 
@@ -76,9 +74,13 @@ def temp_ini():
 
 def temp_raw():
     temp_sensor = temp_loc + device + 'w1_slave'
-    f = open(temp_sensor, 'r')
-    lines = f.readlines()
-    f.close()
+    try:
+        f = open(temp_sensor, 'r')
+        lines = f.readlines()
+        f.close()
+    except:
+        print('temp error')
+        lines = 'error'
     return lines
 
 
@@ -94,7 +96,3 @@ def read_temp():
         temp_c = float(temp_string) / 1000.0
         return temp_c
 
-
-
-wireless_ini()
-wireless_one()

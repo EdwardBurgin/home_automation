@@ -1,13 +1,13 @@
 import base64
 from flask import Flask
 import datetime
-from util import *
+from util import read_temp
 
 def str_format():
     t = datetime.datetime.now().time()
     return "The time is %d:%d and the temperature is...  %.3f degrees"%(t.hour, t.minute, read_temp())
 
-def web_page(im_tag):
+def web_page(im_tag, mess):
     page = """
 
     <html>
@@ -24,7 +24,7 @@ def web_page(im_tag):
         <body>
             <h1>""" + str_format() + """ </h1> 
             """ + im_tag + """
-
+    <h2> """ + mess + """</h2>
         </body>
     </html>
 
@@ -39,6 +39,9 @@ app = Flask(__name__)
 def hello_world():
     data_uri = base64.b64encode(open('graph.png', 'rb').read()).decode('utf-8').replace('\n', '')
     img_tag = '<img src="data:image/png;base64,{0}">'.format(data_uri)
-    return web_page(img_tag) #str_format()
+    f = open('log.txt','r')
+    mess = f.read()
+    f.close()
+    return web_page(img_tag, mess) #str_format()
 
 app.run(host='0.0.0.0', port=8080)
