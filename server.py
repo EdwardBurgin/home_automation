@@ -1,11 +1,11 @@
 import base64
 from flask import Flask
 import datetime
-from util import read_temp
+#from util import read_temp
 
 def str_format():
     t = datetime.datetime.now().time()
-    return "The time is %d:%d and the temperature is...  %.3f degrees"%(t.hour, t.minute, read_temp())
+    return "The time is %d:%d"%(t.hour, t.minute)
 
 def web_page(im_tag, mess):
     page = """

@@ -6,7 +6,7 @@ temp_loc = '/sys/bus/w1/devices/'
 device = '28-0213924576ef/'
 
 def wireless_ini():
-    GPIO.cleanup()
+#     GPIO.cleanup()
     # set the pins numbering mode
     GPIO.setmode(GPIO.BOARD)
     # Select the GPIO pins used for the encoder K0-K3 data inputs
@@ -30,7 +30,7 @@ def wireless_ini():
     GPIO.output(13, False)
 
 def wireless_one():
-    print('turning on radiator')
+#     print('turning on radiator')
     GPIO.output(11, True)
     GPIO.output(15, True)
     GPIO.output(16, True)
@@ -43,11 +43,11 @@ def wireless_one():
     time.sleep(0.25)
     # Disable the modulator
     GPIO.output(22, False)
-    GPIO.cleanup()
+#     GPIO.cleanup()
 
 
 def wireless_one_off():
-    print ("sending code 0111 Socket 1 off")
+#     print ("sending code 0111 Socket 1 off")
     GPIO.output (11, True)
     GPIO.output (15, True)
     GPIO.output (16, True)
@@ -60,13 +60,13 @@ def wireless_one_off():
     time.sleep(0.25)
     # Disable the modulator
     GPIO.output (22, False)
-    GPIO.cleanup()
+#     GPIO.cleanup()
 
 def temp_ini():
-    GPIO.cleanup()
-    GPIO.setmode(GPIO.BCM)
-    GPIO.setup(21, GPIO.OUT)
-    GPIO.output(21,1)
+#     GPIO.cleanup()
+    GPIO.setmode(GPIO.BOARD)
+    GPIO.setup(40, GPIO.OUT)
+    GPIO.output(40,1)
 
     os.system('modprobe w1-gpio')
     os.system('modprobe w1-therm')
@@ -85,7 +85,7 @@ def temp_raw():
 
 
 def read_temp():
-    temp_ini()
+    
     lines = temp_raw()
     while lines[0].strip()[-3:] != 'YES':
         time.sleep(0.2)
