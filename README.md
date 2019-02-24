@@ -81,4 +81,6 @@ Couple of options here (conda in the second link may be best):
 - https://gist.github.com/RobbieClarken/416d67ff6a0ffd631acd
 `source ./etc/bin/activate`
 
+python -m pip install --user seaborn
 
+df -h //this gives human readable file size overview
