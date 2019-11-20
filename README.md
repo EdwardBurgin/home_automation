@@ -1,7 +1,7 @@
 
 # Home Automation
 
-I have had a bunch of RPi units sitting around doing nothing, dumb RF smart plugs using a frequently lost clicker and a new echo devices. A first port of call was thermal regulation for my inadequately insulated rented accomodation. Then I want everything connected to and controlled by the Alexa.
+I have had a bunch of RPi units sitting around doing nothing, dumb RF smart plugs using a frequently lost clicker and a new echo devices. A first port of call was thermal regulation for my inadequately insulated rented accomodation. Then I want everything connected to and controlled by the Alexa. Currently controlled though a notebook with widgets, exposed to the local network so controlled through any internet accessible device.
 Documenting to help others and remind/organise for myself for later.
 
 ![Setup](https://github.com/EdwardBurgin/EdwardBurgin.github.io/blob/master/images/assorted/20190106_131101.jpg )
@@ -71,9 +71,10 @@ Then on the pi start a server like this:
 - On pi: nohup jupyter notebook --no-browser --port=8889 --allow-root #nohup optional #root allows saving files on pi
 - Use htop to ensure running. don't close terminal as will kill kernal. (Recommend to use Tmux to give many panels in terminal)
 - On LOCAL: ssh -N -f -L localhost:8890:localhost:8889 pi@192.168.1.xxx
-- WinSubLinux requires ssh -N -f -L 127.0.0.1:8890:localhost:8889 pi@192.168.1.23
+- WinSubLinux requires ssh -N -f -L 127.0.0.1:8890:localhost:8889 pi@192.168.1.13
 
 nb. if the connection is broken and local says port is in use on reconnect use `<lsof -i :8890 # can pipe this to kill command with | xargs kill -9>`
+nbb At somepoint set notebook to be accessible through local subnet, now requires --ip 0.0.0.0 to run jupyter without throwing error99.
 (lsof on pi is not installed by default-use `sudo apt install lsof`)
 ## Python package management
 Couple of options here (conda in the second link may be best): 
