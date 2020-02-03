@@ -66,7 +66,17 @@ reboot
 sudo pip3 install jupyter
 ```
 
-Then on the pi start a server like this:
+## To give the Pi a fixed IP on WLan:
+sudo nano /etc/dhcpcd.conf
+```
+interface wlan0
+
+static ip_address=192.168.0.200/24  #/24 is shortcut for 255.255.255.0
+static routers=192.168.0.1
+static domain_name_servers=192.168.0.1
+```
+
+##  Then on the pi start a server like this:
 
 - On pi: nohup jupyter notebook --no-browser --port=8889 --allow-root #nohup optional #root allows saving files on pi
 - Use htop to ensure running. don't close terminal as will kill kernal. (Recommend to use Tmux to give many panels in terminal)
