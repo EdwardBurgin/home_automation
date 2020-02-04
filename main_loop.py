@@ -50,7 +50,7 @@ def radiator_controller(temp_lower, time_finish, interval_load):
             sys.stdout.write("%s  \r" % (message) )
             sys.stdout.flush()
 
-        elif (curr > (temp_lower + 0.2)) or (t.hour > time_finish):
+        elif (curr > (temp_lower + 0.2)) or (t.hour >= time_finish):
             message = 'date:%d %d:%d:%d Temp: %.3f, turning OFF radiator. PARAM:ideal_temp %s end_time %d int%d free_mem%d'%(t.day, t.hour, t.minute,t.second, curr, temp_lower, time_finish, interval_load,free_m)
             message_log.appendleft(message)
             wireless_one_off()
