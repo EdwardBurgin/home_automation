@@ -29,8 +29,8 @@ def plot_fn(d):
     '''
     Place plotting in limited scope.
     '''
-#     import matplotlib
-#     matplotlib.use('Agg')
+    import matplotlib
+    matplotlib.use('Agg')
 #     import seaborn as sns
 #     import matplotlib.pyplot as plt
     from matplotlib.pyplot import savefig, plot, close, clf, cla, subplots, xticks
