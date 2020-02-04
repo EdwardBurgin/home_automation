@@ -1,6 +1,6 @@
 from IPython.display import HTML
-from ipywidgets import widgets
-from ipywidgets import interact, interactive, fixed, interact_manual
+# from ipywidgets import widgets
+# from ipywidgets import interact, interactive, fixed, interact_manual
 from IPython.display import display, Image
 
 import gc
@@ -9,9 +9,9 @@ import pandas as pd
 import collections
 import datetime
 import numpy as np
-import pickle
-import util
-from multiprocessing import Process
+# import pickle
+# import util
+# from multiprocessing import Process
 import sys
 import RPi.GPIO as GPIO
 GPIO.setwarnings(False)
@@ -98,7 +98,8 @@ def radiator_controller(temp_lower, time_finish, interval_load):
         file_log.close()
 #         plt.plot([i[1] for i in temps])
         d = pd.Series(index = [i[0] for i in temps], data = [i[1] for i in temps])#.plot(figsize=(20,7))
-
+        plot_fn(d)
+        
         if t.hour > time_finish:
             time.sleep(interval_load*4)
         else:
@@ -106,4 +107,4 @@ def radiator_controller(temp_lower, time_finish, interval_load):
 #         %reset
 
 print('hi, starting loop')        
-radiator_controller(temp_lower=16.7, time_finish=8, interval_load=180)
+radiator_controller(temp_lower=16.5, time_finish=8, interval_load=180)
