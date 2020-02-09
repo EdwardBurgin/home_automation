@@ -25,6 +25,7 @@ message_log = collections.deque(maxlen=200)
 temp_ini()
 wireless_ini()
 
+
 def plot_fn(d):
     '''
     Place plotting in limited scope.
@@ -98,7 +99,7 @@ def radiator_controller(temp_lower, time_finish, interval_load):
         file_log.close()
 #         plt.plot([i[1] for i in temps])
         d = pd.Series(index = [i[0] for i in temps], data = [i[1] for i in temps])#.plot(figsize=(20,7))
-        plot_fn(d)
+#         plot_fn(d)
         
         if t.hour > time_finish:
             time.sleep(interval_load*4)
