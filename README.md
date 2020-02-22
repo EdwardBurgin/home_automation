@@ -86,7 +86,7 @@ static domain_name_servers=192.168.0.1
 - On LOCAL: ssh -N -f -L localhost:8890:localhost:8889 pi@192.168.1.xxx
 - WinSubLinux requires ssh -N -f -L 127.0.0.1:8890:localhost:8889 pi@192.168.1.13
 
-nb. if the connection is broken and local says port is in use on reconnect use `<lsof -i :8890 # can pipe this to kill command with | xargs kill -9>`
+nb. if the connection is broken and local says port is in use on reconnect use `lsof -i :8890 # can pipe this to kill command with | xargs kill -9`
 nbb At somepoint set notebook to be accessible through local subnet, now requires --ip 0.0.0.0 to run jupyter without throwing error99.
 (lsof on pi is not installed by default-use `sudo apt install lsof`)
 ## Python package management
