@@ -100,7 +100,7 @@ python -m pip install --user seaborn
 ## TFT screen for Pi:
 https://github.com/EdwardBurgin/Raspberry-Pi-Installer-Scripts/blob/master/adafruit-pitft.sh
 
-## Mounting an SSD for Plex
+## Mounting an SSD
 https://www.raspberrypi.org/documentation/configuration/external-storage.md
 'sudo nano /etc/fstab'
 ##'UUID=5C50-E449 /mnt/ed_ssd vfat defaults,user,auto,rw,nofail 0 1'## permissions problem
@@ -110,6 +110,7 @@ UUID=5C50-E449 /media/plexmedia/ vfat auto,users,umask=000 0 0 #permission fixed
 https://pimylifeup.com/raspberry-pi-samba/
 sudo apt-get install samba samba-common-bin
 sudo nano /etc/samba/smb.conf
+```
 [foldername1]
 valid users=username1
 public = no
@@ -125,7 +126,15 @@ writable = yes
 browseable =yes
 printable = no
 create mask = 0755
+```
 Then..
 sudo smbpasswd -a pi
 sudo systemctl restart smbd
 
+## Plex on Pi
+https://pimylifeup.com/raspberry-pi-plex-server/
+sudo apt-get install apt-transport-https #apt via https
+curl https://downloads.plex.tv/plex-keys/PlexSign.key | sudo apt-key add -
+echo deb https://downloads.plex.tv/repo/deb public main | sudo tee /etc/apt/sources.list.d/plexmediaserver.list
+sudo apt-get update #new repo so update
+sudo apt-get install plexmediaserver
