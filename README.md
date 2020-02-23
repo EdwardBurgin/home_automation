@@ -97,4 +97,35 @@ Couple of options here (conda in the second link may be best):
 
 python -m pip install --user seaborn
 
-df -h //this gives human readable file size overview
+## TFT screen for Pi:
+https://github.com/EdwardBurgin/Raspberry-Pi-Installer-Scripts/blob/master/adafruit-pitft.sh
+
+## Mounting an SSD for Plex
+https://www.raspberrypi.org/documentation/configuration/external-storage.md
+'sudo nano /etc/fstab'
+##'UUID=5C50-E449 /mnt/ed_ssd vfat defaults,user,auto,rw,nofail 0 1'## permissions problem
+UUID=5C50-E449 /media/plexmedia/ vfat auto,users,umask=000 0 0 #permission fixed
+
+## Pi network share with windows via samba
+https://pimylifeup.com/raspberry-pi-samba/
+sudo apt-get install samba samba-common-bin
+sudo nano /etc/samba/smb.conf
+[foldername1]
+valid users=username1
+public = no
+writable = yes
+browseable =yes
+printable = no
+create mask = 0755
+
+[foldername2]
+valid users=username1
+public = no
+writable = yes
+browseable =yes
+printable = no
+create mask = 0755
+Then..
+sudo smbpasswd -a pi
+sudo systemctl restart smbd
+
