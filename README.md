@@ -102,9 +102,14 @@ https://github.com/EdwardBurgin/Raspberry-Pi-Installer-Scripts/blob/master/adafr
 
 ## Mounting an SSD
 https://www.raspberrypi.org/documentation/configuration/external-storage.md
-'sudo nano /etc/fstab'
+https://www.raspberrypi-spy.co.uk/2014/05/how-to-mount-a-usb-flash-disk-on-the-raspberry-pi/ #better
+```sudo nano /etc/fstab```
+```
 ##'UUID=5C50-E449 /mnt/ed_ssd vfat defaults,user,auto,rw,nofail 0 1'## permissions problem
 UUID=5C50-E449 /media/plexmedia/ vfat auto,users,umask=000 0 0 #permission fixed
+UUID=5C50-E449 /media/plexmedia vfat auto,nofail,noatime,users,rw,uid=pi,gid=pi 0 0#better with nofail noatime
+```
+
 
 ## Pi network share with windows via samba
 https://pimylifeup.com/raspberry-pi-samba/
@@ -138,3 +143,7 @@ curl https://downloads.plex.tv/plex-keys/PlexSign.key | sudo apt-key add -
 echo deb https://downloads.plex.tv/repo/deb public main | sudo tee /etc/apt/sources.list.d/plexmediaserver.list
 sudo apt-get update #new repo so update
 sudo apt-get install plexmediaserver
+
+## FTP server on Pi
+https://www.raspberrypi-spy.co.uk/2018/05/creating-ftp-server-with-raspberry-pi/
+
