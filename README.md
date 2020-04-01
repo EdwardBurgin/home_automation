@@ -55,6 +55,9 @@ Original temp sensor datasheet: https://learn.adafruit.com/adafruits-raspberry-p
 # Pi setup
 Use TMUX, remember to setup TPM and ressurect with continuum. Always forget the tpm bit so here's the link: https://github.com/tmux-plugins/tpm
 
+# Enable SSH
+sudo raspi-config
+
 # Developing on the Raspberry pi
 
 I love jupyter notebook, especially for rapid prototyping (hardware or software). To get this going follow this [blog](https://www.instructables.com/id/Jupyter-Notebook-on-Raspberry-Pi/) to setup jupyter. There is also something called Berryconda (this didn't work for me out of the box so saved for a later date).
