@@ -106,13 +106,22 @@ https://github.com/EdwardBurgin/Raspberry-Pi-Installer-Scripts/blob/master/adafr
 ## Mounting an SSD
 https://www.raspberrypi.org/documentation/configuration/external-storage.md
 https://www.raspberrypi-spy.co.uk/2014/05/how-to-mount-a-usb-flash-disk-on-the-raspberry-pi/ #better
-```sudo nano /etc/fstab```
+
+```
+ls -l /dev/disk/by-uuid/
+sudo nano /etc/fstab```
+
 ```
 ##'UUID=5C50-E449 /mnt/ed_ssd vfat defaults,user,auto,rw,nofail 0 1'## permissions problem
 UUID=5C50-E449 /media/plexmedia/ vfat auto,users,umask=000 0 0 #permission fixed
 UUID=5C50-E449 /media/plexmedia vfat auto,nofail,noatime,users,rw,uid=pi,gid=pi 0 0#better with nofail noatime
 ```
 
+``` 
+sudo mkdir /media/plexmedia
+sudo chown -R pi:pi /media/plexmedia
+sudo reboot
+```
 
 ## Pi network share with windows via samba
 https://pimylifeup.com/raspberry-pi-samba/
