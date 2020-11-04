@@ -69,13 +69,13 @@ cat /etc/os-release
 Pi 2 Model B	1GB	a01041 (Sony, UK)
 a21041 (Embest, China)
 
-# Docker and source on Pi for redis
-Based on: https://thisdavej.com/how-to-install-redis-on-a-raspberry-pi-using-docker/
-https://thisdavej.com/guides/redis-node/installation.html
-https://habilisbest.com/install-redis-on-your-raspberrypi
-Lots of ARM v7 containers here:
-https://hub.docker.com/u/arm32v7/
-Docker jupyter notebook: https://github.com/movalex/rpi-jupyter-conda
+## Docker and source on Pi for redis
+Based on: 
+- https://thisdavej.com/how-to-install-redis-on-a-raspberry-pi-using-docker/
+- https://thisdavej.com/guides/redis-node/installation.html
+- https://habilisbest.com/install-redis-on-your-raspberrypi
+ -Lots of ARM v7 containers here: https://hub.docker.com/u/arm32v7/
+- Docker jupyter notebook: https://github.com/movalex/rpi-jupyter-conda
 ```
 curl -fsSL get.docker.com -o get-docker.sh && sh get-docker.sh
 sudo usermod -aG docker pi
