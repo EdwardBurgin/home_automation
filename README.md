@@ -64,6 +64,7 @@ cat /proc/cpuinfo
 cat /etc/debian_version
 cat /etc/os-release
 ```
+
 9.11  PRETTY_NAME="Raspbian GNU/Linux 9 (stretch)"
 Pi 2 Model B	1GB	a01041 (Sony, UK)
 a21041 (Embest, China)
@@ -87,7 +88,8 @@ vm.overcommit_memory = 1
 
 I love jupyter notebook, especially for rapid prototyping (hardware or software). To get this going follow this [blog](https://www.instructables.com/id/Jupyter-Notebook-on-Raspberry-Pi/) to setup jupyter. There is also something called Berryconda (this didn't work for me out of the box so saved for a later date).
 
-```bash
+```
+bash
 sudo su -
 apt-get update
 apt-get install python3-matplotlib
@@ -96,12 +98,14 @@ pip3 install --upgrade pip
 reboot
 sudo pip3 install jupyter
 sudo apt-get install python-pandas  #FIXED 2020 issue https://raspberrypi.stackexchange.com/questions/17073/how-do-i-install-pandas-on-raspberry-pi
-#####
+```
+
 Trouble after doing pip install pip --upgrade #don't do this
 installed ARMv7 miniconda latest
-```
+
 Don't use miniconda, look for Berryconda instead, the following is for reference.
 https://github.com/jjhelmus/berryconda
+
 ```
 wget http://repo.continuum.io/miniconda/Miniconda3-latest-Linux-armv7l.sh
 sudo md5sum Miniconda3-latest-Linux-armv7l.sh # (optional) check md5
@@ -118,7 +122,6 @@ conda install -c anaconda pandas
 sudo nano /etc/dhcpcd.conf
 ```
 interface wlan0
-
 static ip_address=192.168.0.200/24  #/24 is shortcut for 255.255.255.0
 static routers=192.168.0.1
 static domain_name_servers=192.168.0.1
@@ -152,6 +155,7 @@ https://www.raspberrypi-spy.co.uk/2014/05/how-to-mount-a-usb-flash-disk-on-the-r
 ```
 ls -l /dev/disk/by-uuid/
 sudo nano /etc/fstab```
+```
 
 ```
 ##'UUID=5C50-E449 /mnt/ed_ssd vfat defaults,user,auto,rw,nofail 0 1'## permissions problem
