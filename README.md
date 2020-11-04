@@ -70,6 +70,19 @@ apt-get install python3-scipy
 pip3 install --upgrade pip
 reboot
 sudo pip3 install jupyter
+#####
+Trouble after doing pip install pip --upgrade #don't do this
+installed ARMv7 miniconda latest
+
+wget http://repo.continuum.io/miniconda/Miniconda3-latest-Linux-armv7l.sh
+sudo md5sum Miniconda3-latest-Linux-armv7l.sh # (optional) check md5
+sudo /bin/bash Miniconda3-latest-Linux-armv7l.sh # -> change default directory to /home/pi/miniconda3
+sudo nano /home/pi/.bashrc # -> add: export PATH="/home/pi/miniconda3/bin:$PATH"
+sudo reboot -h now
+sudo chown -R pi miniconda3
+conda config --add channels rpi
+conda update conda
+conda install -c anaconda pandas
 ```
 
 ## To give the Pi a fixed IP on WLan:
