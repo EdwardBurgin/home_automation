@@ -58,6 +58,31 @@ Use TMUX, remember to setup TPM and ressurect with continuum. Always forget the 
 # Enable SSH
 sudo raspi-config
 
+# Pi info
+```
+cat /proc/cpuinfo
+cat /etc/debian_version
+cat /etc/os-release
+```
+9.11  PRETTY_NAME="Raspbian GNU/Linux 9 (stretch)"
+Pi 2 Model B	1GB	a01041 (Sony, UK)
+a21041 (Embest, China)
+
+# Docker and source on Pi for redis
+Based on: https://thisdavej.com/how-to-install-redis-on-a-raspberry-pi-using-docker/
+https://thisdavej.com/guides/redis-node/installation.html
+https://habilisbest.com/install-redis-on-your-raspberrypi
+Lots of ARM v7 containers here:
+https://hub.docker.com/u/arm32v7/
+Docker jupyter notebook: https://github.com/movalex/rpi-jupyter-conda
+```
+curl -fsSL get.docker.com -o get-docker.sh && sh get-docker.sh
+sudo usermod -aG docker pi
+newgrp docker
+docker --version
+sudo nano /etc/sysctl.conf
+vm.overcommit_memory = 1
+```
 # Developing on the Raspberry pi
 
 I love jupyter notebook, especially for rapid prototyping (hardware or software). To get this going follow this [blog](https://www.instructables.com/id/Jupyter-Notebook-on-Raspberry-Pi/) to setup jupyter. There is also something called Berryconda (this didn't work for me out of the box so saved for a later date).
@@ -70,10 +95,14 @@ apt-get install python3-scipy
 pip3 install --upgrade pip
 reboot
 sudo pip3 install jupyter
+sudo apt-get install python-pandas  #FIXED 2020 issue https://raspberrypi.stackexchange.com/questions/17073/how-do-i-install-pandas-on-raspberry-pi
 #####
 Trouble after doing pip install pip --upgrade #don't do this
 installed ARMv7 miniconda latest
-
+```
+Don't use miniconda, look for Berryconda instead, the following is for reference.
+https://github.com/jjhelmus/berryconda
+```
 wget http://repo.continuum.io/miniconda/Miniconda3-latest-Linux-armv7l.sh
 sudo md5sum Miniconda3-latest-Linux-armv7l.sh # (optional) check md5
 sudo /bin/bash Miniconda3-latest-Linux-armv7l.sh # -> change default directory to /home/pi/miniconda3
